@@ -1,0 +1,39 @@
+﻿@model EstaApplyViewModel
+
+<h2>Apply</h2>
+<div class="row">
+    <div class="col-md-4">
+<form asp-controller="Esta" asp-action="Process" method="post">
+    <div class="form-group">
+        <label asp-for="Date"></label>
+        <input asp-for="Date" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="TelNummer"></label>
+        <input asp-for="TelNummer" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Postcode"></label>
+        <input asp-for="Postcode" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Adres"></label>
+        <input asp-for="Adres" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Woonplaat"></label>
+        <input asp-for="Woonplaat" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Provincie"></label>
+        <input asp-for="Provincie" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info">Apply</button>
+</form>
+        </div>
+    </div>
+

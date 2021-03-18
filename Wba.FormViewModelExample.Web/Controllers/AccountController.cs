@@ -24,8 +24,24 @@ namespace Wba.FormViewModelExample.Web.Controllers
         public IActionResult Login(AccountLoginViewModel accountLoginViewModel)
         {
             //gets the form data
-            string Email = accountLoginViewModel?.Email;
-            return Content(Email);
+            // check the modelstate (voor je errormessages)
+            if (!ModelState.IsValid)
+            {
+                // send viewmodel back to view
+                return View(accountLoginViewModel);
+            }
+            string email = accountLoginViewModel?.Email;
+            // check login
+            if (email.Equals("vanderhispaillie.timo@gmail.com"))
+                return Content(email);
+            else
+            {
+                ModelState.AddModelError("", "Gegevens komen niet overeen!");
+                // send back to view
+                return View(accountLoginViewModel);
+            }
+                
+            
         }
     }
 }
